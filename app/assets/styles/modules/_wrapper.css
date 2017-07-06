@@ -1,0 +1,31 @@
+.wrapper {
+
+	overflow: hidden;/*set to hidden to make the spacing gutters in the column layout behave as planned:
+	have padding to the right, on all but the last column.
+	 */
+	padding-left: 18px;
+	padding-right: 18px;
+	max-width: 1236px;
+	margin-left: auto;
+	margin-right: auto;
+
+	&--medium {
+		max-width: 976px;
+	}
+
+	/* any wrapper inside a wrapper should lose its padding - to avoid nested padding being applied*/
+	.wrapper {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+
+	
+	&--b-margin {
+		margin-bottom: 1.1rem;
+		@mixin atMedium {
+			margin-bottom: 3.8rem;
+		}
+	}
+
+		
+}
