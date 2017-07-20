@@ -1,0 +1,33 @@
+.testimonial {
+	background-color: rgba(255, 255, 255, .7);
+	padding: 0 1.8rem 1px 1.8rem; /* we add 1px padding to the bottom of the container so that the margin of 
+	the paragraph is applied propperly and doesnt leak out of the bottom of the div/element*/
+
+	&__photo {
+		border-radius: 80px;
+		overflow: hidden;
+		width: 160px;
+		height: 160px;
+		margin: 0 auto -80px auto;
+		position: relative;
+		top: -80px;
+		border: 6px solid rgba(255, 255, 255, .8);
+	}
+
+	&__title {
+		color: $mainblue;
+		text-align: center;
+		font-size: 1.5rem;
+		font-weight: 500;
+		margin: 0;
+	}
+
+	&__subtitle {
+		color: $mainorange;
+		font-weight: 400;
+		text-align: center;
+		font-size: .9rem;
+		margin: .25rem 0 1rem 0;
+
+	}
+}
