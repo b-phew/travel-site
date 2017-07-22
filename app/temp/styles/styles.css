@@ -497,6 +497,14 @@ template {
 		padding: 4.5rem 0/* zero horizontal padding */
 }
 	}
+.page-section--no-b-padding-until-medium {
+		padding-bottom: 0;
+	}
+@media (min-width: 800px) {
+.page-section--no-b-padding-until-medium {
+			padding-bottom: 4.5rem
+	}
+	}
 .page-section--blue {
 		background-color: #2f5572;
 		color: #fff;
@@ -706,10 +714,20 @@ template {
 	}
 .testimonial {
 	background-color: rgba(255, 255, 255, .7);
-	padding: 0 1.8rem 1px 1.8rem;
-}
-/* we add 1px padding to the bottom of the container so that the margin of 
+	padding: 0 18px 1px 18px; /* we add 1px padding to the bottom of the container so that the margin of 
 	the paragraph is applied propperly and doesnt leak out of the bottom of the div/element*/
+	margin-bottom: 98px;
+}
+@media (min-width: 800px) {
+.testimonial {
+		margin-bottom: 0;
+		padding: 0 1.8rem 1px 1.8rem /* we add 1px padding to the bottom of the container so that the margin of 
+		the paragraph is applied propperly and doesnt leak out of the bottom of the div/element*/
+}
+	}
+.testimonial--last {
+		margin-bottom: 0;
+	}
 .testimonial__photo {
 		border-radius: 80px;
 		overflow: hidden;

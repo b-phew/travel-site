@@ -4,6 +4,14 @@
 	@mixin atMedium {
 		padding: 4.5rem 0;/* zero horizontal padding */ 	
 	}
+
+	&--no-b-padding-until-medium {
+		padding-bottom: 0;
+
+		@mixin atMedium {
+			padding-bottom: 4.5rem;
+		}
+	}
 	
 
 	&--blue {
