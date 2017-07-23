@@ -4,7 +4,7 @@
 	the paragraph is applied propperly and doesnt leak out of the bottom of the div/element*/
 	margin-bottom: 98px;
 
-	@mixin atMedium {
+	@mixin atLarge {
 		margin-bottom: 0;
 		padding: 0 1.8rem 1px 1.8rem; /* we add 1px padding to the bottom of the container so that the margin of 
 		the paragraph is applied propperly and doesnt leak out of the bottom of the div/element*/

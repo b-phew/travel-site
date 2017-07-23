@@ -9,9 +9,15 @@
 		@mixin-content;
 	}
 }
+&--no-b-padding-until-medium {
+		padding-bottom: 0;
 
+		@mixin atMedium {
+			padding-bottom: 4.5rem;
+		}
+	}
 @define-mixin atLarge {
-	@media (min-width: 1200px) {
+	@media (min-width: 1010px) {
 		@mixin-content;
 	}
 }
