@@ -530,7 +530,8 @@ template {
 	}
 @media (min-width: 1010px) {
 .page-section--no-b-padding-until-large {
-			padding-bottom: 4.4rem
+			padding-bottom: 4.4rem;
+			margin-bottom: -3rem/* added this bit myself as it looked odd */
 	}
 	}
 .page-section--blue {
@@ -886,4 +887,26 @@ instead edit gulp/templates/sprite */
 		width: 34.75px;
 		height: 42px;
 		background-position: 36.69752421959096% 45.792307692307695%;
+	}
+.site-footer {
+	background-color: #2f5572;
+	
+	padding: .1rem 0;
+	text-align: center;
+
+}
+.site-footer p {
+		color: #ffff;
+	}
+.site-footer__text {
+		display: block;
+		margin-bottom: .5rem;
+		font-weight: 200;
+	}
+@media (min-width: 800px) {
+.site-footer__text {
+			display: inline;
+			margin-bottom: 0;
+			margin-right: 1.4rem
+	}
 	}
