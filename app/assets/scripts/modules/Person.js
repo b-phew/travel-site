@@ -6,3 +6,9 @@ function Person(fullName, favColor) {
 			" and my favorite color is " + this.favoriteColor + ".");
 	}
 }
+
+console.log("Hello from person.js");
+exports.exampleProperty = "Super magical example property";
+exports.exampleFunction = function() {
+	alert("This is an example.");
+}
