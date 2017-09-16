@@ -972,6 +972,7 @@ instead edit gulp/templates/sprite */
 	}
 	}
 .site-header__menu-content {
+		/* hidden for small screens and displayed for medium or larger */
 		display: none;
 	}
 @media (min-width: 800px) {
@@ -979,6 +980,9 @@ instead edit gulp/templates/sprite */
 			display: block
 	}
 	}
+.site-header__menu-content--is-visible {
+			display: block;
+		}
 .primary-nav--pull-right {
 		float: right;
 	}

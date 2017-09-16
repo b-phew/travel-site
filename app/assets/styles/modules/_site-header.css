@@ -51,9 +51,14 @@
 	}
 
 	&__menu-content {
+		/* hidden for small screens and displayed for medium or larger */
 		display: none;
 
 		@mixin atMedium {
+			display: block;
+		}
+
+		&--is-visible {
 			display: block;
 		}
 	}
