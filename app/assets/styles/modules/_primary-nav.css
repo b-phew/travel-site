@@ -14,8 +14,15 @@
 
 	li {
 		list-style: none;
-		float: left;
+		
 		padding-right: 20px;
+		display: inline-block;
+
+		@mixin atMedium {
+			float: left;
+			display: block;
+			
+		}
 	}
 
 	a {

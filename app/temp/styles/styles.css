@@ -927,8 +927,11 @@ instead edit gulp/templates/sprite */
 		background-color: rgba(47,85,114, .50)
 }
 	}
+@media (min-width: 800px) {
 .site-header__btn-container {
-		float: right;
+			float: right
+		
+	}
 	}
 .site-header__logo {
 		position: absolute;
@@ -974,10 +977,13 @@ instead edit gulp/templates/sprite */
 .site-header__menu-content {
 		/* hidden for small screens and displayed for medium or larger */
 		display: none;
+		padding-top: 100px;
+		text-align: center;
 	}
 @media (min-width: 800px) {
 .site-header__menu-content {
-			display: block
+			display: block;
+			padding-top: 0
 	}
 	}
 .site-header__menu-content--is-visible {
@@ -997,8 +1003,15 @@ instead edit gulp/templates/sprite */
 	}
 .primary-nav li {
 		list-style: none;
-		float: left;
+		
 		padding-right: 20px;
+		display: inline-block;
+	}
+@media (min-width: 800px) {
+.primary-nav li {
+			float: left;
+			display: block
+	}
 	}
 .primary-nav a {
 		color: white;
