@@ -11,7 +11,7 @@ class MobileMenu {
 	events() {
 		this.menuIcon.click(this.toggleTheMenu.bind(this));
 		/* bind(this) can change the this identifier to something other than refering to the object,
-		 but in this instance we need it to do just that and not get changed to refrence something else. */
+		 but in this instance we need it to do just that and not get changed to reference something else. */
 	}
 
 	toggleTheMenu() {
