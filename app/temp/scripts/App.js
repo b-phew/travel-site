@@ -10345,7 +10345,8 @@ var _revealOnScroll2 = _interopRequireDefault(_revealOnScroll);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var mobileMenu = new _MobileMenu2.default();
-var revealOnScroll = new _revealOnScroll2.default();
+new _revealOnScroll2.default((0, _jquery2.default)(".feature-item"), "85%"); //the element and the offset to be used in the waypoint
+new _revealOnScroll2.default((0, _jquery2.default)(".testimonial"), "60%");
 
 /***/ }),
 /* 2 */
@@ -10434,11 +10435,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var RevealOnScroll = function () {
-	function RevealOnScroll() {
+	function RevealOnScroll(els, offset) {
 		_classCallCheck(this, RevealOnScroll);
 
-		this.itemsToReveal = (0, _jquery2.default)(".feature-item");
+		this.itemsToReveal = els;
 		this.hideInitially();
+		this.offsetPercentage = offset;
 		this.createWayPoints();
 	}
 
@@ -10450,6 +10452,7 @@ var RevealOnScroll = function () {
 	}, {
 		key: 'createWayPoints',
 		value: function createWayPoints() {
+			var that = this;
 			this.itemsToReveal.each(function () {
 				var currentItem = this;
 				new Waypoint({
@@ -10458,7 +10461,7 @@ var RevealOnScroll = function () {
 					handler: function handler() {
 						(0, _jquery2.default)(currentItem).addClass("reveal-item--is-visible");
 					}, //what we want to happen when the element is scrolled to.
-					offset: "85%"
+					offset: that.offsetPercentage
 				});
 			});
 		}
