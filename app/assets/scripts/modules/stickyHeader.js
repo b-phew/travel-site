@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import waypoints from '../../../../node_modules/waypoints/lib/noframework.waypoints';
+import smoothScroll from 'jquery-smooth-scroll';
 
 class StickyHeader {
 	constructor() {
@@ -9,6 +10,11 @@ class StickyHeader {
 		this.pageSections = $(".page-section");
 		this.headerLinks = $(".primary-nav a");
 		this.createPageSectionWaypoints();
+		this.addSmoothScrolling();
+	}
+
+	addSmoothScrolling() {
+		this.headerLinks.smoothScroll();
 	}
 
 	createHeaderWaypoint() {
@@ -32,13 +38,32 @@ class StickyHeader {
 		var that = this;
 		this.pageSections.each(function() {
 			var currentPageSection = this;
+
+				//the offest lets each link in the nav to be highlighted  at a different stage
+				//(this case: highlight  the nav link while scrolling down at 18% pasty the matching element, 
+				//but when scrolling ujp make it so 50% of the element has to have passed my before adding the highlight)
 				new Waypoint({
 					element: currentPageSection,
-					handler: function() {
-						var matchingHeaderLink = currentPageSection.getAttribute("data-matching-link");
-						this.headerLinks.removeClass("is-current-link");
-						$(matchingHeaderLink).addClass("is-current-link");
-					}
+					handler: function(direction) {
+						if(direction == "down"){
+							var matchingHeaderLink = currentPageSection.getAttribute("data-matching-link");
+							that.headerLinks.removeClass("is-current-link");
+							$(matchingHeaderLink).addClass("is-current-link");
+						}
+					},
+					offset: "18%"
+				});
+
+				new Waypoint({
+					element: currentPageSection,
+					handler: function(direction) {
+						if(direction == "up"){
+							var matchingHeaderLink = currentPageSection.getAttribute("data-matching-link");
+							that.headerLinks.removeClass("is-current-link");
+							$(matchingHeaderLink).addClass("is-current-link");
+						}
+					},
+					offset: "-50%"
 				});
 		});
 	}
