@@ -10,8 +10,12 @@
 	}
 	
 	@mixin atMedium {
+		position: fixed;
 		background-color: rgba($mainblue, .50);
-
+		
+		&--dark {
+			background-color: rgba(23, 51, 72, .85);
+		}
 	}
 
 	&__btn-container {
@@ -24,19 +28,27 @@
 	&__logo {
 		position: absolute;
 		background-color: $mainblue;
-		padding: 25px 36px;
+		padding: 15px 20px;
 		top: 0;
 		left: 50%; /*	move to the middle */
-
+		transition:  transform .3s ease-out;
 		transform: translateX(-50%) scale(.8 );/*	move it back a bit(half its own length.
 		 url(https://www.udemy.com/git-a-web-developer-job-mastering-the-modern-workflow/learn/v4/t/lecture/5335434?start=0)*/
 		transform-origin: 50% 0;
+
 
 		@mixin atMedium {
 			/* at a medium or bigger screen, make the logo go back to noraml(not moved to centre),
 			 and then move the block back to position 0(instead of -50) */
 			left: auto;
+			padding: 25px 36px;
 			transform: translateX(0);
+			
+			/*this selector will only target the logo when the dark version of the menu background is being displayed */
+			.site-header--dark & {
+				transform: scale(.56);
+
+			}
 		}
 
 	}
