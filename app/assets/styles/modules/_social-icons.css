@@ -1,0 +1,29 @@
+.social-icons {
+	text-align: center;
+
+	&__icon {
+		background-color: $mainorange;
+		/*icons will be able to stay in a single line if displayed as a block(below)
+		but by giving them the inline-block as wellmeans they size can more easily be altered*/
+		display: inline-block;
+		margin: 0 5px 5px 5px;/*spacing between each icon*/
+		width: 33%;
+		height: 72px;
+		position: relative;/*{parent element of icon- video 49}to make the position absolute work in the .icon code below*/
+		
+		@mixin atSmall {
+			width: 72px;
+		}
+		
+		.icon {
+			display: block;
+			/* places th sprite 50% in & down, then maves it back and up by half its own 
+			width/height using translate */
+			position: absolute;
+			margin: 0 5px;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+	}
+}
