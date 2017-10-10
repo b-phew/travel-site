@@ -54,7 +54,7 @@ gulp.task('usemin', ['styles', 'scripts'], function() {
 		css: [function() {return rev()}, function() {return cssnano()}],
 		js: [function() {return rev()}, function() {return uglify()}]
 	}))
-	.pipe(gulp.dest("docs"));
+	.pipe(gulp.dest("./docs"));
 });
 
 gulp.task('build', ['deleteDistFolder', 'copyGeneralFiles', 'optimizeImages', 'useminTrigger']);
