@@ -11292,6 +11292,8 @@ var StickyHeader = function () {
 	_createClass(StickyHeader, [{
 		key: 'refreshWaypoints',
 		value: function refreshWaypoints() {
+			//refresh the waypoints on image load
+			//so they play well with the lazy loading module
 			this.lazyImages.on('load', function () {
 				Waypoint.refreshAll();
 			});
