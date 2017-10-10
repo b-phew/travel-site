@@ -46,13 +46,13 @@ gulp.task('optimizeImages', ['deleteDistFolder'], function() {
 
 gulp.task('useminTrigger', ['deleteDistFolder'], function() {
 	gulp.start("usemin");
-})
+});
 
 gulp.task('usemin', ['styles', 'scripts'], function() {
 	return gulp.src("./app/index.html")
 	.pipe(usemin({
 		css: [function() {return rev()}, function() {return cssnano()}],
-		js: [function() {return  rev()}, function() {return uglify()}]
+		js: [function() {return rev()}, function() {return uglify()}]
 	}))
 	.pipe(gulp.dest("docs"));
 });
